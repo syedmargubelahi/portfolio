@@ -1,0 +1,67 @@
+/* Design tokens. Change colours, type and motion here, not in components. */
+:root {
+  /* Colour */
+  --paper: #f8f5ef;
+  --paper-deep: #f0ebe1;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --ink-soft: #3f4a66;
+  --ink-mute: #5f6880;
+  --royal: #2f4bd8;
+  --royal-deep: #2238ad;
+  --royal-wash: #e7ebfd;
+  --lavender: #dcd5f7;
+  --lavender-ink: #5442b0;
+  --mint: #cfeee0;
+  --mint-ink: #1d6b4c;
+  --line: rgba(20, 33, 61, 0.11);
+  --line-strong: rgba(20, 33, 61, 0.2);
+  --focus: #2f4bd8;
+
+  /* Type */
+  --font-display: 'Sora Variable', 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter Variable', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+  --step-1: clamp(1.15rem, 1.08rem + 0.35vw, 1.35rem);
+  --step-2: clamp(1.4rem, 1.25rem + 0.7vw, 1.85rem);
+  --step-3: clamp(1.8rem, 1.5rem + 1.4vw, 2.75rem);
+  --step-4: clamp(2.4rem, 1.7rem + 3.2vw, 4.6rem);
+
+  /* Shape and depth */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(20, 33, 61, 0.06), 0 2px 8px rgba(20, 33, 61, 0.04);
+  --shadow-md: 0 2px 6px rgba(20, 33, 61, 0.05), 0 14px 36px -12px rgba(20, 33, 61, 0.18);
+  --shadow-lg: 0 4px 10px rgba(20, 33, 61, 0.05), 0 32px 70px -24px rgba(20, 33, 61, 0.32);
+
+  /* Space */
+  --gutter: clamp(16px, 4vw, 40px);
+  --section: clamp(80px, 10vw, 150px);
+  --container: 1200px;
+
+  /* Motion: one easing family, a few durations. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-med: 420ms;
+  --dur-slow: 900ms;
+}
+
+.accent--royal {
+  --accent: var(--royal);
+  --accent-wash: var(--royal-wash);
+  --accent-ink: var(--royal-deep);
+}
+.accent--lavender {
+  --accent: #7a68d6;
+  --accent-wash: var(--lavender);
+  --accent-ink: var(--lavender-ink);
+}
+.accent--mint {
+  --accent: #3a9b74;
+  --accent-wash: var(--mint);
+  --accent-ink: var(--mint-ink);
+}
