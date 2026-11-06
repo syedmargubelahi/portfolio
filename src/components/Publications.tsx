@@ -10,6 +10,10 @@ export function PublicationsSection({ items }: { items: Publication[] }) {
         <ul className="publication-list">
           {items.map((p, i) => (
             <Reveal as="li" key={p.id} className="publication" delay={i * 60}>
+              <span className="publication-year" aria-hidden="true">
+                {p.date.slice(0, 4)}
+              </span>
+              <div className="publication-body">
               <p className="publication-meta">
                 <span className="publication-outlet">{p.outlet}</span> · <time dateTime={p.date}>{formatDate(p.date)}</time>
                 {p.citation && <span> · {p.citation}</span>}
@@ -26,6 +30,7 @@ export function PublicationsSection({ items }: { items: Publication[] }) {
               </h3>
               {p.authors && <p className="publication-authors">{p.authors}</p>}
               {p.summary && <p>{p.summary}</p>}
+              </div>
             </Reveal>
           ))}
         </ul>

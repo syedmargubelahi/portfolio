@@ -124,7 +124,7 @@
   transform: rotate(-45deg);
 }
 
-@media (max-width: 859px) {
+@media (max-width: 1079px) {
   .menu-toggle {
     display: grid;
   }

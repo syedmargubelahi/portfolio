@@ -3,8 +3,41 @@ import type { Profile, Project, VideoMedia } from '../content';
 import { Icon, Monogram } from './ui';
 import { PreviewVideo } from './PreviewVideo';
 import { ProjectCapsules } from './ProjectCapsules';
+import { useCountUp, useInView, useTilt } from '../hooks';
 
-export function Hero({ profile, projects }: { profile: Profile; projects: Project[] }) {
+export interface HeroStat {
+  value: number;
+  label: string;
+}
+
+/** One figure that counts up when it first appears. Every figure is counted from the content files. */
+function Stat({ stat, start, index }: { stat: HeroStat; start: boolean; index: number }) {
+  const shown = useCountUp(stat.value, start, 1200 + index * 150);
+  return (
+    <div className="hero-stat" style={{ '--i': index } as CSSProperties}>
+      <dt>{stat.label}</dt>
+      <dd>
+        <span aria-hidden="true">{shown}</span>
+        <span className="visually-hidden">{stat.value}</span>
+      </dd>
+    </div>
+  );
+}
+
+function HeroStats({ stats }: { stats: HeroStat[] }) {
+  const [ref, inView] = useInView<HTMLDListElement>({ threshold: 0.4, once: true });
+  if (!stats.length) return null;
+  return (
+    <dl ref={ref} className="hero-stats">
+      {stats.map((s, i) => (
+        <Stat key={s.label} stat={s} start={inView} index={i} />
+      ))}
+    </dl>
+  );
+}
+
+export function Hero({ profile, projects, stats = [] }: { profile: Profile; projects: Project[]; stats?: HeroStat[] }) {
+  const tiltRef = useTilt<HTMLElement>(3);
   const words = profile.heroHeadline.split(' ');
   // The hero frame shows the first real clip from the first project that has one.
   const featured = projects.find((p) => p.media.some((m) => m.kind === 'video'));
@@ -59,11 +92,13 @@ export function Hero({ profile, projects }: { profile: Profile; projects: Projec
               About Me
             </a>
           </div>
+
+          <HeroStats stats={stats} />
         </div>
 
         <div className="hero-visual">
           {featured && clip ? (
-            <figure className={`hero-frame accent--${featured.accent}`}>
+            <figure ref={tiltRef} className={`hero-frame accent--${featured.accent}`}>
               <PreviewVideo media={clip} label={featured.name} />
               <figcaption className="hero-frame-caption">
                 <span className="live-dot" aria-hidden="true" />

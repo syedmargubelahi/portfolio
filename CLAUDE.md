@@ -20,8 +20,10 @@ src/
     projects.ts   ← projects, media, case studies
     experience.ts  education.ts  credentials.ts  publications.ts  capabilities.ts
     index.ts      ← applies visibility + ordering; components import only from here
-  components/     ← one file per section, plus ui.tsx (shared bits) and PreviewVideo.tsx
-  styles/         ← tokens.css (colours, type, motion), base.css, sections.css
+  components/     ← one file per section, plus ui.tsx (shared bits), PreviewVideo.tsx,
+                    ScrollUI.tsx (progress bar, back-to-top) and SkillsTicker.tsx
+  styles/         ← tokens.css (colours, type, motion), base.css, sections.css,
+                    motion.css (scroll, hero figures, timeline, filters; loaded last)
   hooks.ts  format.ts
 public/media/<project-id>/   ← real screenshots and clips
 scripts/capture-media.mjs    ← captures real screenshots/clips of a live site
@@ -64,6 +66,9 @@ scripts/check-site.mjs       ← end-to-end checks (npm test)
   repetitive card grids, clutter and neon.
 - Monogram "ME" stands in for logo/portrait until `profile.portrait` is set.
 - Motion: one easing family (`--ease-out`), durations `--dur-fast/med/slow`. Reveals via `<Reveal>`.
+  Hero figures are counted from content (never typed). Moving bands must pause on hover/focus and
+  have a Pause button. Long lists collapse with `aria-expanded` toggles rather than scrolling forever.
+  `npm test` checks nine screen widths (320–1920px) for anything cut off at the sides.
   No scroll hijacking, no audio, no parallax tied to scroll.
 - Video: always muted, poster first, lazy-loaded, plays only while visible, pauses offscreen, never
   autoplays under reduced motion, has a visible Play/Pause button. Use `<PreviewVideo>`.

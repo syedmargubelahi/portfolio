@@ -159,6 +159,81 @@ for (const size of sizes) {
   await ctx.close();
 }
 
+// Nothing spills off the side at common screen widths, from small phones to wide monitors.
+{
+  const widths = [320, 360, 414, 600, 820, 1024, 1180, 1366, 1920];
+  const bad = [];
+  for (const width of widths) {
+    const ctx = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
+    const page = await ctx.newPage();
+    await page.goto(base, { waitUntil: 'networkidle' });
+    // Open every collapsed part so its content is measured too.
+    for (const b of await page.$$('.more-toggle, .more-wrap button')) await b.click();
+    await page.waitForTimeout(200);
+    const out = await page.evaluate(() => {
+      const vw = document.documentElement.clientWidth;
+      const skip = (el) => el.closest('.ticker, .hero-glow, .contact-orb, .filter-scroll, .word-mask, .visually-hidden, .skip-link, [aria-hidden="true"]');
+      const offenders = [];
+      for (const el of document.querySelectorAll('main *, header *, footer *')) {
+        if (skip(el)) continue;
+        const r = el.getBoundingClientRect();
+        if (r.width && (r.right > vw + 1 || r.left < -1)) offenders.push(`${el.tagName.toLowerCase()}.${el.className}`.slice(0, 60));
+      }
+      return { scroll: document.documentElement.scrollWidth - vw, offenders: [...new Set(offenders)].slice(0, 4) };
+    });
+    if (out.scroll > 0 || out.offenders.length) bad.push(`${width}px: ${out.scroll}px extra ${out.offenders.join(', ')}`);
+    await ctx.close();
+  }
+  check(`nothing cut off at ${widths.length} screen widths`, bad.length === 0, bad.join(' | '));
+}
+
+// Interactive parts: duty toggles, credential filters, skills band pause, back-to-top.
+{
+  const ctx = await browser.newContext({ viewport: { width: 1280, height: 860 } });
+  const page = await ctx.newPage();
+  await page.goto(base, { waitUntil: 'networkidle' });
+
+  const toggle = page.locator('.more-toggle').first();
+  if (await toggle.count()) {
+    await toggle.scrollIntoViewIfNeeded();
+    await toggle.click();
+    await page.waitForTimeout(950);
+    const open = (await toggle.getAttribute('aria-expanded')) === 'true';
+    const panel = page.locator('.collapse').first();
+    const height = await panel.evaluate((el) => el.getBoundingClientRect().height);
+    check('experience "Show more duties" opens in place', open && height > 20, `${Math.round(height)}px`);
+  }
+
+  const published = credentials.filter((c) => c.visibility === 'published');
+  const awards = published.filter((c) => c.type === 'award').length;
+  if (awards) {
+    await page.locator('#credentials').scrollIntoViewIfNeeded();
+    await page.getByRole('button', { name: /^Awards/ }).click();
+    await page.waitForTimeout(300);
+    const rows = await page.locator('.credential-row').count();
+    const pressed = await page.getByRole('button', { name: /^Awards/ }).getAttribute('aria-pressed');
+    check('credential filter shows only that type', rows === Math.min(awards, 8) && pressed === 'true', `${rows} rows`);
+    await page.getByRole('button', { name: /^All/ }).click();
+    const more = page.locator('.more-wrap button');
+    if (await more.count()) {
+      await more.click();
+      await page.waitForTimeout(200);
+      check('"Show all" lists every credential', (await page.locator('.credential-row').count()) === published.length);
+    }
+  }
+
+  if (await page.locator('.ticker').count()) {
+    await page.click('.ticker-toggle');
+    const state = await page.$eval('.ticker-track', (el) => getComputedStyle(el).animationPlayState);
+    check('skills band pauses with its button', state === 'paused', state);
+  }
+
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight / 2));
+  await page.waitForTimeout(400);
+  check('back-to-top button appears after scrolling', await page.locator('.to-top').isVisible());
+  await ctx.close();
+}
+
 // Mobile menu.
 {
   const ctx = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true });

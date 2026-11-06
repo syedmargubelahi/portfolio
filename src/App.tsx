@@ -9,6 +9,8 @@ import { CredentialsSection } from './components/Credentials';
 import { PublicationsSection } from './components/Publications';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { SkillsTicker } from './components/SkillsTicker';
+import { BackToTop } from './components/ScrollUI';
 
 export function App() {
   const { profile, projects, experience, education, credentials, publications, capabilities } = content;
@@ -19,13 +21,19 @@ export function App() {
     { id: 'work', label: 'Work', show: projects.length > 0 },
     { id: 'about', label: 'About', show: true },
     { id: 'experience', label: 'Experience', show: experience.length > 0 },
-    {
-      id: education.length ? 'education' : 'credentials',
-      label: 'Credentials',
-      show: education.length > 0 || credentials.length > 0,
-    },
+    { id: 'education', label: 'Education', show: education.length > 0 },
+    { id: 'writing', label: 'Research', show: publications.length > 0 },
+    { id: 'credentials', label: 'Credentials', show: credentials.length > 0 },
     { id: 'contact', label: 'Contact', show: hasContact },
   ];
+
+  // Hero figures are counted from published content, never typed in by hand.
+  const stats = [
+    { value: projects.filter((p) => p.link?.status === 'live').length, label: 'Live websites' },
+    { value: publications.length, label: 'Published papers' },
+    { value: experience.length, label: 'Roles held' },
+    { value: credentials.length, label: 'Credentials & activities' },
+  ].filter((s) => s.value > 0);
 
   return (
     <>
@@ -35,16 +43,18 @@ export function App() {
       {showDrafts && <div className="draft-banner">Draft preview — drafts are visible only in development.</div>}
       <Header profile={profile} items={nav.filter((n) => n.show)} />
       <main id="main" tabIndex={-1}>
-        <Hero profile={profile} projects={projects} />
+        <Hero profile={profile} projects={projects} stats={stats} />
+        {capabilities.length > 0 && <SkillsTicker groups={capabilities} />}
         {projects.length > 0 && <SelectedWork projects={projects} />}
         <About profile={profile} capabilities={capabilities} />
         {experience.length > 0 && <ExperienceSection items={experience} />}
         {education.length > 0 && <EducationSection items={education} />}
-        {credentials.length > 0 && <CredentialsSection items={credentials} />}
         {publications.length > 0 && <PublicationsSection items={publications} />}
+        {credentials.length > 0 && <CredentialsSection items={credentials} />}
         {hasContact && <Contact profile={profile} />}
       </main>
       <Footer profile={profile} />
+      <BackToTop />
     </>
   );
 }

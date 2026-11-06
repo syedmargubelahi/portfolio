@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Profile } from '../content';
 import { useActiveSection } from '../hooks';
 import { Monogram } from './ui';
+import { ScrollProgress } from './ScrollUI';
 
 export interface NavItem {
   id: string;
@@ -25,7 +26,7 @@ export function Header({ profile, items }: { profile: Profile; items: NavItem[] 
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-    const mq = window.matchMedia('(min-width: 860px)');
+    const mq = window.matchMedia('(min-width: 1080px)');
     const onMq = () => mq.matches && setOpen(false);
     window.addEventListener('keydown', onKey);
     mq.addEventListener('change', onMq);
@@ -73,6 +74,7 @@ export function Header({ profile, items }: { profile: Profile; items: NavItem[] 
           </ul>
         </nav>
       </div>
+      <ScrollProgress />
     </header>
   );
 }
