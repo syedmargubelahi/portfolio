@@ -20,7 +20,8 @@ export const profile: Profile = {
     'Lately I have been turning everyday problems into working software. Using AI-assisted tools, I have taken three ideas to live websites: DeadlineDesk, PostDori and BCGO Career Map.',
   ],
   // Email and LinkedIn from the CV; X and Facebook from the social links on
-  // github.com/syedmargubelahi; Margub confirmed all three on 2026-11-06. Phone number and home
+  // github.com/syedmargubelahi; Margub confirmed all three on 2026-11-06.
+  // Instagram supplied by Margub on 2026-11-06. Phone number and home
   // address are deliberately not published. An empty list hides the Contact
   // section and its navigation link.
   contact: [
@@ -28,6 +29,7 @@ export const profile: Profile = {
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/syedmargubelahi/', display: 'LinkedIn' },
     { label: 'X', href: 'https://x.com/elahiAI', display: 'X @elahiAI' },
     { label: 'Facebook', href: 'https://www.facebook.com/syed.elahi', display: 'Facebook' },
+    { label: 'Instagram', href: 'https://www.instagram.com/margubsvibehub/', display: 'Instagram @margubsvibehub' },
     { label: 'GitHub', href: 'https://github.com/syedmargubelahi', display: 'GitHub' },
   ],
   // Only a public version of the CV belongs here: the CVs on file include a
