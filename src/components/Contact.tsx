@@ -33,7 +33,8 @@ export function Contact({ profile }: { profile: Profile }) {
           <span className="contact-orb contact-orb--a" aria-hidden="true" />
           <span className="contact-orb contact-orb--b" aria-hidden="true" />
           <p className="eyebrow">Contact</p>
-          <h2 id="contact-title">Let’s talk.</h2>
+          <h2 id="contact-title">Let’s work together.</h2>
+          {profile.contactIntro && <p className="contact-intro">{profile.contactIntro}</p>}
           <ul className="contact-links">
             {profile.contact.map((c) => {
               const external = /^https?:/.test(c.href);

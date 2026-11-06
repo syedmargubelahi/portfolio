@@ -12,8 +12,8 @@ export function SelectedWork({ projects }: { projects: Project[] }) {
         <SectionHeading
           id="work-title"
           eyebrow="Selected work"
-          title="Projects that started as everyday problems."
-          intro="Real screenshots and recordings of each project. Links open the live websites."
+          title="Real problems, shipped as live products."
+          intro="Three websites I took from idea to launch with AI-assisted tools. Every screenshot and clip comes from the live site."
         />
         <div className="work-list">
           {projects.map((p, i) =>

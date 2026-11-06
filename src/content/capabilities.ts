@@ -1,23 +1,40 @@
 import type { CapabilityGroup } from './types.ts';
 
 // No percentages or proficiency scores: list what you do and the tools you use.
+// Skill names use the standard terms recruiters and ATS software search for.
 // Source: CVs on file plus what Margub listed in chat.
 export const capabilities: CapabilityGroup[] = [
   {
     id: 'administration',
     order: 1,
     visibility: 'published',
-    title: 'Administration',
+    title: 'Office administration',
     description: 'Keeping an office organised, its records accurate and its numbers in order.',
-    items: ['Budgeting', 'Records & database management', 'Recruiting & training staff', 'Event planning'],
+    items: [
+      'Budget preparation',
+      'Payroll processing',
+      'Recruitment & training',
+      'Records & database management',
+      'Procurement & logistics',
+      'Event management',
+      'Exam coordination',
+    ],
   },
   {
     id: 'editorial',
     order: 2,
     visibility: 'published',
-    title: 'Editorial & content',
-    description: 'Shaping words for print, broadcast and the screen.',
-    items: ['Sub-editing & proofreading', 'Print production', 'Content writing', 'Social media content', 'SEO research (on-page & off-page)', 'Public relations'],
+    title: 'Editorial & communications',
+    description: 'Making words clear and correct for print, broadcast and the screen.',
+    items: [
+      'Sub-editing',
+      'Copy editing & proofreading',
+      'Print production',
+      'Content writing',
+      'Social media management',
+      'SEO (on-page & off-page)',
+      'Public relations',
+    ],
   },
   {
     id: 'research',
@@ -25,15 +42,29 @@ export const capabilities: CapabilityGroup[] = [
     visibility: 'published',
     title: 'Economics & research',
     description: 'Looking at a problem through costs, people and data.',
-    items: ['Econometric analysis (2SLS, ARDL)', 'Data analysis', 'STATA', 'SPSS', 'Python'],
+    items: ['Econometrics (2SLS, ARDL)', 'Quantitative research', 'Data analysis', 'STATA', 'SPSS', 'Python'],
   },
   {
     id: 'tools',
     order: 4,
     visibility: 'published',
-    title: 'Tools & AI workflows',
+    title: 'Software & AI tools',
     description: 'What I use day to day, including AI-assisted workflows.',
-    items: ['Excel', 'Word', 'PowerPoint', 'Outlook', 'HTML', 'Canva (templates & graphics)', 'Adobe Creative Suite', 'Photoshop', 'PhotoScape', 'CapCut', 'ChatGPT', 'Claude', 'Gemini'],
+    items: [
+      'Microsoft Excel',
+      'Microsoft Word',
+      'Microsoft PowerPoint',
+      'Microsoft Outlook',
+      'HTML',
+      'Canva (templates & graphics)',
+      'Adobe Photoshop',
+      'Adobe Creative Suite',
+      'PhotoScape',
+      'CapCut',
+      'ChatGPT',
+      'Claude',
+      'Gemini',
+    ],
   },
   {
     id: 'languages',

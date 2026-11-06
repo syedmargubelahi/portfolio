@@ -58,7 +58,7 @@ export function CredentialsSection({ items }: { items: Credential[] }) {
   return (
     <section className="section credentials" id="credentials" aria-labelledby="credentials-title">
       <div className="container">
-        <SectionHeading id="credentials-title" eyebrow="Credentials" title="Training, activities and recognition." />
+        <SectionHeading id="credentials-title" eyebrow="Credentials" title="Always learning: training, conferences and recognition." />
 
         <Reveal className="filter-bar">
           <div className="filter-scroll" role="group" aria-label="Show credentials by type">

@@ -8,17 +8,38 @@ export const profile: Profile = {
   // Set this once the site has a public address. It turns on canonical and
   // Open Graph URL tags.
   siteUrl: 'https://syedmargubelahi.github.io/portfolio',
+  titles: ['Sub-Editor', 'Office Administrator', 'Economics Researcher', 'AI-assisted Product Builder'],
   heroHeadline: 'Turning everyday problems into useful digital experiences.',
   heroWords: { highlight: 'useful' },
   heroIntro:
-    'I’m Syed Margub Elahi—an administration and editorial professional with a background in economics and a growing portfolio of technology projects.',
+    'I’m Syed Margub Elahi, Sub-Editor at Bangladesh Betar and Senior Office Administrator since 2018, with an MA in Economics and three published research papers. I bring editorial precision, organised administration and data-driven thinking, and I use AI-assisted tools to turn ideas into live products.',
   shortBio:
-    'Administration and editorial professional in Dhaka with a background in economics and published research, building practical technology projects.',
+    'Syed Margub Elahi, Dhaka: Sub-Editor at Bangladesh Betar and Senior Office Administrator. MA in Economics, three published econometric research papers and three live AI-assisted web products.',
   about: [
-    'My work sits where organisation, language and numbers meet. As a Sub-Editor at Bangladesh Betar I work with words every day, and as Senior Office Administrator at Vertical Horizon Limited I help keep an office running: its budgets, its records and the details that hold them together.',
-    'I studied economics at United International University and Jahangirnagar University, and have co-authored three published research papers on trade, remittances and inflation, and environmental quality, using econometric models such as 2SLS and ARDL. Economics shapes how I look at a problem: what it costs, who it affects, and what a simple fix would change.',
-    'Lately I have been turning everyday problems into working software. Using AI-assisted tools, I have taken three ideas to live websites: DeadlineDesk, PostDori and BCGO Career Map.',
+    'Teams rely on me to get the details right: on the page, in the office and in the numbers.',
+    'At Bangladesh Betar, the national public broadcaster, I sub-edit and produce the Betar Bangla journal, from vetted copy and programme planning with 14 regional offices to print and nationwide distribution. At Vertical Horizon Limited I have run office administration since 2018: budgets, records, recruitment, payroll and examinations.',
+    'My training is in economics, with an MA from Jahangirnagar University and a BSc from United International University. I have co-authored three published research papers on trade, remittances and inflation, and environmental quality, using econometric models such as 2SLS and ARDL. That training shapes how I approach a problem: what it costs, who it affects, and what the evidence says.',
+    'I also build. Using AI-assisted tools, I have taken three ideas from a blank page to live websites: DeadlineDesk, PostDori and BCGO Career Map. Together, that makes me useful wherever a team needs clear writing, reliable operations and someone who learns and ships new tools fast.',
   ],
+  strengths: [
+    {
+      title: 'Publication-ready editing',
+      text: 'Sub-Editor at Bangladesh Betar since 2019: editing, proofreading and print production for the Betar Bangla journal.',
+    },
+    {
+      title: 'Organised administration',
+      text: 'Budgets, records, recruitment, payroll, procurement and exam logistics at Vertical Horizon since 2018.',
+    },
+    {
+      title: 'Evidence-based thinking',
+      text: 'MA in Economics and three published papers using 2SLS and ARDL econometric models.',
+    },
+    {
+      title: 'Fast, AI-assisted delivery',
+      text: 'Three live websites, each taken from idea to launch with AI-assisted tools.',
+    },
+  ],
+  contactIntro: 'For roles, projects or collaborations, email is the fastest way to reach me. I reply personally.',
   // Email and LinkedIn from the CV; X and Facebook from the social links on
   // github.com/syedmargubelahi; Margub confirmed all three on 2026-11-06.
   // Instagram supplied by Margub on 2026-11-06. Phone number and home

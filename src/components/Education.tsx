@@ -6,7 +6,7 @@ export function EducationSection({ items }: { items: Education[] }) {
   return (
     <section className="section education" id="education" aria-labelledby="education-title">
       <div className="container">
-        <SectionHeading id="education-title" eyebrow="Education" title="Grounded in economics." />
+        <SectionHeading id="education-title" eyebrow="Education" title="Grounded in economics and business." />
         <ol className="edu-list">
           {items.map((e, i) => (
             <Reveal as="li" key={e.id} className="edu-item" delay={i * 70}>

@@ -12,6 +12,7 @@ import { projects } from '../src/content/projects.ts';
 import { profile } from '../src/content/profile.ts';
 import { credentials } from '../src/content/credentials.ts';
 import { publications } from '../src/content/publications.ts';
+import { experience } from '../src/content/experience.ts';
 
 // Expectations come from the content itself, so the checks stay valid as projects change.
 const drafts = projects.filter((p) => p.visibility === 'draft');
@@ -271,7 +272,14 @@ for (const size of sizes) {
   const ctx = await browser.newContext({ javaScriptEnabled: false });
   const page = await ctx.newPage();
   await page.goto(base);
-  check('no-JS fallback text present', (await page.textContent('noscript'))?.includes('Syed Margub Elahi') ?? false);
+  const plain = (await page.textContent('noscript')) ?? '';
+  check('no-JS fallback text present', plain.includes('Syed Margub Elahi'));
+  const jobs = experience.filter((e) => e.visibility === 'published');
+  check(
+    'plain-text CV (for ATS) lists every published role and no phone number',
+    jobs.every((j) => plain.includes(j.role)) && !/\+?880\s?-?1\d{3}/.test(plain),
+    `${jobs.length} roles`,
+  );
   await ctx.close();
 }
 

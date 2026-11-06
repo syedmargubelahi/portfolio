@@ -1,7 +1,12 @@
 import type { Experience } from './types.ts';
 
-// Source: CV-of-Syed-Margub-Elahi 2025.pdf (August 2025), the newest CV on file.
+// Sources: the CVs on file (2018–2025) and Margub's Facebook work history.
 // Dates follow what Margub confirmed in chat.
+//
+// Writing style (CV and ATS friendly):
+// - Start each highlight with a strong verb in the present tense for current roles, past tense otherwise.
+// - Lead with scope and results that the sources state (offices, units, students, volunteers).
+// - Never add a number, result or duty that no source gives. No money amounts.
 export const experience: Experience[] = [
   {
     id: 'bangladesh-betar',
@@ -12,16 +17,17 @@ export const experience: Experience[] = [
     employment: 'Full-time',
     start: '2019-07',
     end: 'present',
-    location: 'Ministry of Information and Broadcasting',
-    summary: 'Editorial and production work on Bangladesh Betar’s publications, including the Betar Bangla journal.',
+    location: 'Ministry of Information and Broadcasting, Dhaka',
+    summary:
+      'Edit and produce the Betar Bangla journal and other publications of Bangladesh’s national public broadcaster, from programme planning to print and nationwide distribution.',
     highlights: [
-      'Coordinate programme planning with 14 regional Betar offices and 6 Dhaka units, including World-Wide, Commercial and Agro-based Programme services.',
-      'Administer the publication budget and payments to contractors, writers’ royalties, picture processing, printing and archive purchases.',
-      'Proofread, edit and keep file records for vetted programme plans, stories, poems, pictures, news and articles before publication.',
-      'Work with the printing press on final designs and corrections, and prepare cover briefs and news material for each print release.',
-      'Collect event and conference photographs for the Betar Bangla journal.',
+      'Coordinate programme planning with 14 regional Betar offices and 6 central units, including World-Wide, Commercial and Agro-based Programme services.',
+      'Edit, proofread and approve vetted programme plans, stories, poems, news, articles and photographs for publication, and keep complete file records.',
+      'Manage the publication budget and payments to contractors, writers’ royalties, picture processing, printing and archive purchases.',
+      'Lead print production with the printing press: cover briefs, final designs, corrections and press-ready news material for each release.',
       'Plan and run distribution of the journal across Bangladesh.',
-      'Collect and archive books by renowned authors, including rare old archives, for the office library.',
+      'Cover events and conferences with photographs for the journal’s record.',
+      'Build the office library’s archive of books by renowned authors, including rare old editions.',
     ],
   },
   {
@@ -33,14 +39,16 @@ export const experience: Experience[] = [
     employment: 'Part-time',
     start: '2018-01',
     end: 'present',
-    summary: 'Administration for an education provider preparing students for Edexcel and Cambridge examinations.',
+    location: 'Dhaka',
+    summary:
+      'Run office administration for an education provider that prepares students for Edexcel and Cambridge IGCSE, AS and A2 examinations.',
     highlights: [
-      'Prepare departmental overhead budgets and student attendance and performance sheets.',
-      'Plan and run Flashback, the year-end syllabus review event.',
+      'Prepare departmental overhead budgets, and student attendance and performance reports.',
+      'Interview, recruit and train examiners and invigilators, and process payroll slips for the department.',
+      'Plan and deliver Flashback, the year-end syllabus review event.',
       'Prepare class tests and mock papers for Edexcel and Cambridge IGCSE, AS and A2.',
-      'Plan exam seating arrangements and parent–teacher meetings.',
-      'Manage student, teacher and financial records on the verticalhorizon.info platform.',
-      'Interview, recruit and train examiners and invigilators, and handle payroll slips for the department.',
+      'Organise exam seating plans and parent–teacher meetings.',
+      'Maintain student, teacher and financial records on the verticalhorizon.info platform.',
       'Handle logistics and procurement.',
     ],
   },
@@ -53,27 +61,16 @@ export const experience: Experience[] = [
     organization: 'Vertical Horizon Limited',
     start: '2019',
     end: 'present',
+    location: 'Dhaka',
+    summary: 'Own the organisation’s social media presence, from strategy to published content.',
     highlights: [
       'Design and run social media strategies aligned with the organisation’s goals.',
       'Write blog posts and marketing content.',
       'Create promotional materials for social media.',
     ],
   },
-  {
-    id: 'maple-leaf-teacher',
-    order: 5,
-    visibility: 'published',
-    role: 'Mathematics Teacher',
-    organization: 'Maple Leaf International School',
-    start: '2017-08',
-    end: '2017-09',
-    highlights: [
-      'Taught Edexcel mathematics (British curriculum) to classes 6 and 7.',
-      'Set class tests and monthly and half-yearly papers, and marked the scripts of 400 students.',
-      'Planned weekly lessons and delivered each topic to plan.',
-    ],
-  },
-  // The three records below come from Margub's Facebook work history; he chose them on 2026-11-07.
+  // British Council, Daraz and Banglalink Digital come from Margub's Facebook work history (chosen on 2026-11-07).
+  // No source describes the duties, so these records carry no highlights.
   {
     id: 'british-council',
     order: 4,
@@ -83,6 +80,21 @@ export const experience: Experience[] = [
     start: '2018-03',
     end: '2018-09',
     location: 'Dhaka',
+  },
+  {
+    id: 'maple-leaf-teacher',
+    order: 5,
+    visibility: 'published',
+    role: 'Mathematics Teacher',
+    organization: 'Maple Leaf International School',
+    start: '2017-08',
+    end: '2017-09',
+    location: 'Dhaka',
+    summary: 'Taught Edexcel mathematics (British curriculum) to classes 6 and 7.',
+    highlights: [
+      'Set class tests and monthly and half-yearly papers, and marked the scripts of 400 students.',
+      'Planned lessons for each week and completed every topic on schedule.',
+    ],
   },
   {
     id: 'daraz',

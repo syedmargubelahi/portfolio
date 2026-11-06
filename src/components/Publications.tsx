@@ -6,7 +6,7 @@ export function PublicationsSection({ items }: { items: Publication[] }) {
   return (
     <section className="section publications" id="writing" aria-labelledby="writing-title">
       <div className="container">
-        <SectionHeading id="writing-title" eyebrow="Research" title="Published research." />
+        <SectionHeading id="writing-title" eyebrow="Research" title="Published research in applied economics." />
         <ul className="publication-list">
           {items.map((p, i) => (
             <Reveal as="li" key={p.id} className="publication" delay={i * 60}>

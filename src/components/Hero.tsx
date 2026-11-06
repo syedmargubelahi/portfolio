@@ -57,6 +57,13 @@ export function Hero({ profile, projects, stats = [] }: { profile: Profile; proj
             <span className="kicker-dot" aria-hidden="true" />
             {profile.preferredName} · {profile.location}
           </p>
+          <p className="hero-titles">
+            {profile.titles.map((t, i) => (
+              <span key={t} style={{ '--i': i } as CSSProperties}>
+                {t}
+              </span>
+            ))}
+          </p>
 
           <h1 id="hero-title" className="hero-title" aria-label={profile.heroHeadline}>
             {words.map((word, i) => {

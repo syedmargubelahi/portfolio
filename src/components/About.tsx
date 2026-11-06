@@ -7,7 +7,7 @@ export function About({ profile, capabilities }: { profile: Profile; capabilitie
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
       <div className="container">
-        <SectionHeading id="about-title" eyebrow="About" title="Organised by habit, curious by nature." />
+        <SectionHeading id="about-title" eyebrow="About" title="Precise with words. Careful with numbers. Quick to ship." />
 
         <div className="about-grid">
           <Reveal className="about-portrait">
@@ -41,10 +41,24 @@ export function About({ profile, capabilities }: { profile: Profile; capabilitie
           </Reveal>
         </div>
 
+        {profile.strengths && profile.strengths.length > 0 && (
+          <ul className="strengths" aria-label="What I bring">
+            {profile.strengths.map((s, i) => (
+              <Reveal as="li" key={s.title} className="strength" delay={i * 80}>
+                <span className="strength-index" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </Reveal>
+            ))}
+          </ul>
+        )}
+
         {capabilities.length > 0 && (
           <div className="capabilities" aria-labelledby="capabilities-title">
             <h3 id="capabilities-title" className="sub-heading">
-              Capabilities
+              Skills &amp; tools
             </h3>
             <ul className="capability-list">
               {capabilities.map((c, i) => (

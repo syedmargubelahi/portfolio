@@ -177,11 +177,17 @@ export interface Profile {
   location: string;
   /** Full public URL once deployed, e.g. 'https://margub.me'. Enables canonical tags. */
   siteUrl?: string;
+  /** Professional title line: the roles a recruiter should read first (also used for search and ATS). */
+  titles: string[];
   heroHeadline: string;
   heroWords: { highlight: string };
   heroIntro: string;
   shortBio: string;
   about: string[];
+  /** Three or four value statements shown in About. Each must rest on facts elsewhere on the site. */
+  strengths?: { title: string; text: string }[];
+  /** One line under the Contact heading. */
+  contactIntro?: string;
   /** Empty list hides the Contact section and its nav link. */
   contact: ContactLink[];
   /** Path under /public to a PDF CV. Leave undefined to hide the download. */

@@ -56,6 +56,20 @@ scripts/check-site.mjs       ← end-to-end checks (npm test)
 - Uncertain records stay `visibility: 'draft'`. Drafts never render in production or in metadata.
   Note: draft text is still inside the JavaScript bundle, so never put private material in content files.
 
+## Writing style (CV and ATS)
+
+Margub asked for recruiter-ready wording that Claude writes and maintains.
+
+- Write like a CV specialist: lead with scope and value, then the detail. Strong verbs, present tense for
+  current roles, past tense for earlier ones. One idea per bullet, no filler.
+- Use only facts from Margub's sources. Real figures are welcome (14 offices, 6 units, 50 volunteers,
+  400 students); invented ones never. No money amounts.
+- Use the standard skill and job-title terms recruiters search for (e.g. "Payroll processing", "Copy editing").
+- `profile.titles`, `profile.strengths` and section headings are the first things a reader sees: keep them
+  short, specific and true. Each strength must rest on a record elsewhere on the site.
+- `vite.config.ts` builds a plain-text CV into `<noscript>` for ATS and no-JS readers from published content.
+  It must never include a phone number, address, grades or referees.
+
 ## Design rules
 
 - Palette (in `styles/tokens.css`): warm off-white `--paper`, deep navy `--ink`, royal blue `--royal`,
