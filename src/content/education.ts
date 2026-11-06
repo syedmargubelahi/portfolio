@@ -22,8 +22,19 @@ export const education: Education[] = [
     note: 'Major: Economics (Quantitative)',
   },
   {
-    id: 'mlis-a',
+    // Confirmed by Margub on 2026-11-07: moved to UIU before completing the BBA.
+    id: 'brac-bba',
     order: 3,
+    visibility: 'published',
+    qualification: 'Bachelor of Business Administration (BBA) studies',
+    institution: 'BRAC University',
+    start: '2010',
+    end: '2013-12',
+    note: 'Residential Semester, RS 31 batch. Transferred to UIU before completing the degree.',
+  },
+  {
+    id: 'mlis-a',
+    order: 4,
     visibility: 'published',
     qualification: 'A Levels',
     institution: 'Maple Leaf International School',
@@ -33,7 +44,7 @@ export const education: Education[] = [
   },
   {
     id: 'mlis-o',
-    order: 4,
+    order: 5,
     visibility: 'published',
     qualification: 'O Levels',
     institution: 'Maple Leaf International School',

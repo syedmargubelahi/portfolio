@@ -226,15 +226,14 @@ export const credentials: Credential[] = [
       'January 2010 – November 2011. Volunteered at the foundation’s programmes for World Water Day, World Health Day and Universal Children’s Day.',
   },
   {
-    // Draft: the 2018 CV gives no year. Ask Margub before publishing.
+    // No CV gives a year; the 2018 CVs list it between 2017 and 2018 events. Shown without a date.
     id: 'uiu-research-methodology',
-    order: 21,
-    visibility: 'draft',
+    order: 7.5,
+    visibility: 'published',
     type: 'training',
     involvement: 'attended',
     title: 'Research Methodology',
     issuer: 'United International University',
-    date: '2017',
-    description: 'Workshop by UIUJEF, supported by PPRC. Year not yet confirmed.',
+    description: 'Workshop by UIUJEF, supported by PPRC.',
   },
 ];

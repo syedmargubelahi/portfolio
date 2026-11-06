@@ -135,7 +135,8 @@ export interface Credential extends Ordered {
   involvement: Involvement;
   title: string;
   issuer: string;
-  date: YearMonth;
+  /** Leave out when no source gives a date. */
+  date?: YearMonth;
   url?: string;
   description?: string;
   /** Certificate scan or photo under /public. */

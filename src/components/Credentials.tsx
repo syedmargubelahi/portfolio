@@ -83,7 +83,7 @@ export function CredentialsSection({ items }: { items: Credential[] }) {
           {shown.map((c, i) => (
             <li key={c.id} className="credential-row" style={{ '--i': Math.min(i, 8) } as CSSProperties}>
               <span className="credential-year" aria-hidden="true">
-                {c.date.slice(0, 4)}
+                {c.date?.slice(0, 4) ?? '—'}
               </span>
               <div className="credential-body">
                 <p className="credential-type">
@@ -101,7 +101,13 @@ export function CredentialsSection({ items }: { items: Credential[] }) {
                   <DraftBadge show={c.visibility === 'draft'} />
                 </h3>
                 <p className="credential-meta">
-                  {c.issuer} · <time dateTime={c.date}>{formatDate(c.date)}</time>
+                  {c.issuer}
+                  {c.date && (
+                    <>
+                      {' · '}
+                      <time dateTime={c.date}>{formatDate(c.date)}</time>
+                    </>
+                  )}
                 </p>
                 {c.description && <p className="credential-desc">{c.description}</p>}
               </div>
