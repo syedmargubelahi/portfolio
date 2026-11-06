@@ -15,10 +15,13 @@ export const experience: Experience[] = [
     location: 'Ministry of Information and Broadcasting',
     summary: 'Editorial and production work on Bangladesh Betar’s publications, including the Betar Bangla journal.',
     highlights: [
+      'Coordinate programme planning with 14 regional Betar offices and 6 Dhaka units, including World-Wide, Commercial and Agro-based Programme services.',
+      'Administer the publication budget and payments to contractors, writers’ royalties, picture processing, printing and archive purchases.',
       'Proofread, edit and keep file records for vetted programme plans, stories, poems, pictures, news and articles before publication.',
       'Work with the printing press on final designs and corrections, and prepare cover briefs and news material for each print release.',
+      'Collect event and conference photographs for the Betar Bangla journal.',
       'Plan and run distribution of the journal across Bangladesh.',
-      'Collect and archive books by renowned authors for the office library.',
+      'Collect and archive books by renowned authors, including rare old archives, for the office library.',
     ],
   },
   {
@@ -35,6 +38,7 @@ export const experience: Experience[] = [
       'Prepare departmental overhead budgets and student attendance and performance sheets.',
       'Plan and run Flashback, the year-end syllabus review event.',
       'Prepare class tests and mock papers for Edexcel and Cambridge IGCSE, AS and A2.',
+      'Plan exam seating arrangements and parent–teacher meetings.',
       'Manage student, teacher and financial records on the verticalhorizon.info platform.',
       'Interview, recruit and train examiners and invigilators, and handle payroll slips for the department.',
     ],
@@ -63,8 +67,8 @@ export const experience: Experience[] = [
     start: '2017-08',
     end: '2017-09',
     highlights: [
-      'Taught Edexcel mathematics to classes 6 and 7.',
-      'Set class tests and half-yearly papers, and marked student scripts.',
+      'Taught Edexcel mathematics (British curriculum) to classes 6 and 7.',
+      'Set class tests, monthly and half-yearly papers, and marked the scripts of 200 students.',
       'Planned weekly lessons and delivered each topic to plan.',
     ],
   },

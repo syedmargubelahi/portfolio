@@ -8,7 +8,7 @@ export const education: Education[] = [
     visibility: 'published',
     qualification: 'MA in Economics',
     institution: 'Jahangirnagar University',
-    start: '2018-04',
+    start: '2018-05',
     end: '2019-09',
   },
   {
@@ -19,6 +19,7 @@ export const education: Education[] = [
     institution: 'United International University',
     start: '2014-01',
     end: '2017-12',
+    note: 'Major: Economics (Quantitative)',
   },
   {
     id: 'mlis-a',
@@ -38,6 +39,6 @@ export const education: Education[] = [
     institution: 'Maple Leaf International School',
     start: '2008-01',
     end: '2009-01',
-    note: 'Business Studies',
+    note: 'Commerce',
   },
 ];

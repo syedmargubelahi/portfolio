@@ -33,7 +33,7 @@ export const capabilities: CapabilityGroup[] = [
     visibility: 'published',
     title: 'Tools & AI workflows',
     description: 'What I use day to day, including AI-assisted workflows.',
-    items: ['Excel', 'Word', 'PowerPoint', 'HTML', 'Canva', 'Adobe Creative Suite', 'CapCut', 'ChatGPT', 'Claude', 'Gemini'],
+    items: ['Excel', 'Word', 'PowerPoint', 'HTML', 'Canva', 'Adobe Creative Suite', 'Photoshop', 'PhotoScape', 'CapCut', 'ChatGPT', 'Claude', 'Gemini'],
   },
   {
     id: 'languages',
