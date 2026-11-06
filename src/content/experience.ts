@@ -41,6 +41,7 @@ export const experience: Experience[] = [
       'Plan exam seating arrangements and parent–teacher meetings.',
       'Manage student, teacher and financial records on the verticalhorizon.info platform.',
       'Interview, recruit and train examiners and invigilators, and handle payroll slips for the department.',
+      'Handle logistics and procurement.',
     ],
   },
   {
@@ -60,7 +61,7 @@ export const experience: Experience[] = [
   },
   {
     id: 'maple-leaf-teacher',
-    order: 4,
+    order: 5,
     visibility: 'published',
     role: 'Mathematics Teacher',
     organization: 'Maple Leaf International School',
@@ -71,5 +72,35 @@ export const experience: Experience[] = [
       'Set class tests, monthly and half-yearly papers, and marked the scripts of 200 students.',
       'Planned weekly lessons and delivered each topic to plan.',
     ],
+  },
+  // The three records below come from Margub's Facebook work history; he chose them on 2026-11-07.
+  {
+    id: 'british-council',
+    order: 4,
+    visibility: 'published',
+    role: 'Temporary Staff',
+    organization: 'British Council Bangladesh',
+    start: '2018-03',
+    end: '2018-09',
+    location: 'Dhaka',
+  },
+  {
+    id: 'daraz',
+    order: 6,
+    visibility: 'published',
+    role: 'Junior Executive, Back Office Support',
+    organization: 'Daraz',
+    start: '2016-12',
+    end: '2017-12',
+    location: 'Dhaka',
+  },
+  {
+    id: 'banglalink-digital',
+    order: 7,
+    visibility: 'published',
+    role: 'International Customer Service and Sales Support',
+    organization: 'Banglalink Digital',
+    start: '2012-12',
+    end: '2013-12',
   },
 ];
