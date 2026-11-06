@@ -212,7 +212,7 @@ for (const size of sizes) {
     await page.waitForTimeout(300);
     const rows = await page.locator('.credential-row').count();
     const pressed = await page.getByRole('button', { name: /^Awards/ }).getAttribute('aria-pressed');
-    check('credential filter shows only that type', rows === Math.min(awards, 8) && pressed === 'true', `${rows} rows`);
+    check('credential filter shows only that type', rows === awards && pressed === 'true', `${rows} rows`);
     await page.getByRole('button', { name: /^All/ }).click();
     const more = page.locator('.more-wrap button');
     if (await more.count()) {

@@ -114,6 +114,7 @@ export interface Education extends Ordered {
 export type CredentialType =
   | 'certification'
   | 'training'
+  | 'workshop'
   | 'seminar'
   | 'conference'
   | 'extracurricular'

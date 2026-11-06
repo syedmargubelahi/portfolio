@@ -7,6 +7,7 @@ const TYPES: { type: CredentialType; title: string }[] = [
   { type: 'certification', title: 'Certifications' },
   { type: 'award', title: 'Awards' },
   { type: 'training', title: 'Training' },
+  { type: 'workshop', title: 'Workshops' },
   { type: 'conference', title: 'Conferences' },
   { type: 'seminar', title: 'Seminars' },
   { type: 'volunteering', title: 'Volunteering' },
@@ -17,6 +18,7 @@ const SINGULAR: Record<CredentialType, string> = {
   certification: 'Certification',
   award: 'Award',
   training: 'Training',
+  workshop: 'Workshop',
   conference: 'Conference',
   seminar: 'Seminar',
   volunteering: 'Volunteering',
@@ -33,8 +35,8 @@ const INVOLVEMENT: Record<Involvement, string> = {
   volunteered: 'Volunteer',
 };
 
-/** How many records show before "Show all". */
-const LIMIT = 8;
+/** Every record shows; filters narrow the list. Raise this only if the list grows very long. */
+const LIMIT = 60;
 
 export function CredentialsSection({ items }: { items: Credential[] }) {
   const [filter, setFilter] = useState<CredentialType | 'all'>('all');

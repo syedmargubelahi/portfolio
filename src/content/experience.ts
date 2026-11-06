@@ -69,7 +69,7 @@ export const experience: Experience[] = [
     end: '2017-09',
     highlights: [
       'Taught Edexcel mathematics (British curriculum) to classes 6 and 7.',
-      'Set class tests, monthly and half-yearly papers, and marked the scripts of 200 students.',
+      'Set class tests and monthly and half-yearly papers, and marked the scripts of 400 students.',
       'Planned weekly lessons and delivered each topic to plan.',
     ],
   },

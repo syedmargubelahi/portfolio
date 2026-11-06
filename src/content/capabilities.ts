@@ -17,7 +17,7 @@ export const capabilities: CapabilityGroup[] = [
     visibility: 'published',
     title: 'Editorial & content',
     description: 'Shaping words for print, broadcast and the screen.',
-    items: ['Sub-editing & proofreading', 'Print production', 'Content writing', 'Social media content', 'SEO research', 'Public relations'],
+    items: ['Sub-editing & proofreading', 'Print production', 'Content writing', 'Social media content', 'SEO research (on-page & off-page)', 'Public relations'],
   },
   {
     id: 'research',
@@ -33,7 +33,7 @@ export const capabilities: CapabilityGroup[] = [
     visibility: 'published',
     title: 'Tools & AI workflows',
     description: 'What I use day to day, including AI-assisted workflows.',
-    items: ['Excel', 'Word', 'PowerPoint', 'Outlook', 'HTML', 'Canva', 'Adobe Creative Suite', 'Photoshop', 'PhotoScape', 'CapCut', 'ChatGPT', 'Claude', 'Gemini'],
+    items: ['Excel', 'Word', 'PowerPoint', 'Outlook', 'HTML', 'Canva (templates & graphics)', 'Adobe Creative Suite', 'Photoshop', 'PhotoScape', 'CapCut', 'ChatGPT', 'Claude', 'Gemini'],
   },
   {
     id: 'languages',
