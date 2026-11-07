@@ -84,7 +84,8 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
 - Hero (`styles/hero.css`, loaded last): dark stage, name as the `h1`, portrait in a tall rounded frame with
   facts built from content. On phones the portrait comes first and the facts sit under it.
   Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-image.png` is the
-  link-preview card; regenerate it when the portrait or current role changes.
+  link-preview card; regenerate it with `python scripts/make-og-image.py public/media/portrait/portrait-1200.jpg public/og-image.png`
+  when the portrait or tagline changes (the text lines are inside the script).
 - Type: Sora (display, `--font-display`) and Inter (body), self-hosted via Fontsource.
 - Shapes: rounded media frames (`--radius-lg`), pill buttons and links, soft shadows (`--shadow-*`).
 - Layouts vary per section (collage, typographic panel, numbered list, dark timeline, pill rows). Avoid

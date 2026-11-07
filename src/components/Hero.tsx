@@ -109,11 +109,7 @@ export function Hero({
 
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="hero-kicker">
-            <span className="kicker-dot" aria-hidden="true" />
-            {profile.location}
-          </p>
-
+          {/* Location lives in the About "At a glance" card, not above the name. */}
           <h1 id="hero-title" className="hero-name" aria-label={profile.name}>
             {nameWords.map((word, i) => (
               <Fragment key={i}>

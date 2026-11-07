@@ -97,7 +97,7 @@ export interface Experience extends Ordered {
   role: string;
   organization: string;
   /** Leave out when the CV does not say. */
-  employment?: 'Full-time' | 'Part-time' | 'Contract' | 'Volunteer';
+  employment?: 'Full-time' | 'Part-time' | 'Contract' | 'Volunteer' | 'Project-based';
   start: YearMonth;
   end: YearMonth | 'present';
   location?: string;

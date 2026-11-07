@@ -69,6 +69,20 @@ export const experience: Experience[] = [
       'Create promotional materials for social media.',
     ],
   },
+  {
+    // Margub told us on 2026-11-07: project-based event work since 2025.
+    // Event names to follow; add them as highlights when Margub supplies them.
+    id: 'breakfast-club-dhaka',
+    order: 3.5,
+    visibility: 'published',
+    role: 'Logistics and Security Admin',
+    organization: 'Breakfast Club Dhaka',
+    employment: 'Project-based',
+    start: '2025',
+    end: 'present',
+    location: 'Dhaka',
+    summary: 'Manage logistics and security administration for Breakfast Club Dhaka events, project by project.',
+  },
   // British Council, Daraz and Banglalink Digital come from Margub's Facebook work history (chosen on 2026-11-07).
   // No source describes the duties, so these records carry no highlights.
   {

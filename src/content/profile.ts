@@ -10,8 +10,8 @@ export const profile: Profile = {
   siteUrl: 'https://syedmargubelahi.github.io/portfolio',
   titles: ['Sub-Editor', 'Senior Office Administrator', 'Economics Researcher', 'AI-assisted Product Builder'],
   // Shown in the browser tab, search results and link previews instead of a list of job titles.
-  // Each part rests on real work: editing (words), economics research (numbers), live products (ship).
-  tagline: 'Precise Words. Sharp Numbers. Ideas That Ship.',
+  // Chosen by Margub on 2026-11-07. Each part rests on real work: sub-editing, economics research, live products.
+  tagline: 'Editor’s Eye. Economist’s Mind. Builder’s Drive.',
   heroHeadline: 'Turning everyday problems into useful digital experiences.',
   heroWords: { highlight: 'useful' },
   heroIntro:
