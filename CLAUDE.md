@@ -23,7 +23,7 @@ src/
   components/     ← one file per section, plus ui.tsx (shared bits), PreviewVideo.tsx,
                     ScrollUI.tsx (progress bar, back-to-top) and SkillsTicker.tsx
   styles/         ← tokens.css (colours, type, motion), base.css, sections.css,
-                    motion.css (scroll, hero figures, timeline, filters; loaded last)
+                    motion.css (scroll, hero figures, timeline, filters), hero.css (portrait hero; loaded last)
   hooks.ts  format.ts
 public/media/<project-id>/   ← real screenshots and clips
 scripts/capture-media.mjs    ← captures real screenshots/clips of a live site
@@ -72,8 +72,14 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
 
 ## Design rules
 
-- Palette (in `styles/tokens.css`): warm off-white `--paper`, deep navy `--ink`, royal blue `--royal`,
-  restrained `--lavender` and `--mint` accents. Each project picks `accent: 'royal' | 'lavender' | 'mint'`.
+- Palette (in `styles/tokens.css`): warm off-white `--paper`, deep navy `--ink`, dark `--night` stage
+  (hero, About card, timeline), ember orange `--ember` (text on light) / `--ember-bright` (text on dark) /
+  `--ember-glow` (fills), matching the warm background of the portrait. Restrained `--lavender` and `--mint`
+  accents. Each project picks `accent: 'ember' | 'lavender' | 'mint'`.
+- Hero (`styles/hero.css`, loaded last): dark stage, name as the `h1`, portrait in a tall rounded frame with
+  facts built from content. On phones the portrait comes first and the facts sit under it.
+  Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-image.png` is the
+  link-preview card; regenerate it when the portrait or current role changes.
 - Type: Sora (display, `--font-display`) and Inter (body), self-hosted via Fontsource.
 - Shapes: rounded media frames (`--radius-lg`), pill buttons and links, soft shadows (`--shadow-*`).
 - Layouts vary per section (collage, typographic panel, numbered list, dark timeline, pill rows). Avoid

@@ -60,9 +60,16 @@ export const profile: Profile = {
   // Margub's CV photo. Set to undefined to show the monogram.
   portrait: {
     kind: 'image',
-    src: '/media/portrait.jpg',
-    alt: 'Portrait of Syed Margub Elahi.',
-    width: 472,
-    height: 591,
+    // Studio portrait supplied on 2026-11-07, upscaled 2x and sharpened.
+    src: '/media/portrait/portrait-1200.jpg',
+    alt: 'Portrait of Syed Margub Elahi in a black polo shirt against a warm orange background.',
+    width: 1200,
+    height: 1499,
+    webp: [
+      { src: '/media/portrait/portrait-480.webp', width: 480 },
+      { src: '/media/portrait/portrait-800.webp', width: 800 },
+      { src: '/media/portrait/portrait-1200.webp', width: 1200 },
+      { src: '/media/portrait/portrait-1600.webp', width: 1600 },
+    ],
   },
 };

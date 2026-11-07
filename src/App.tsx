@@ -35,6 +35,15 @@ export function App() {
     { value: credentials.length, label: 'Credentials & activities' },
   ].filter((s) => s.value > 0);
 
+  // Facts on the hero portrait, also taken from published content.
+  const currentRole = experience.find((e) => e.end === 'present');
+  const topDegree = education[0];
+  const badges = [
+    ...(currentRole ? [{ title: currentRole.role, detail: currentRole.organization }] : []),
+    ...(topDegree ? [{ title: topDegree.qualification, detail: topDegree.institution }] : []),
+    ...(publications.length ? [{ title: `${publications.length} published papers`, detail: 'Applied economics research' }] : []),
+  ];
+
   return (
     <>
       <a className="skip-link" href="#main">
@@ -43,10 +52,16 @@ export function App() {
       {showDrafts && <div className="draft-banner">Draft preview — drafts are visible only in development.</div>}
       <Header profile={profile} items={nav.filter((n) => n.show)} />
       <main id="main" tabIndex={-1}>
-        <Hero profile={profile} projects={projects} stats={stats} />
+        <Hero profile={profile} projects={projects} stats={stats} badges={badges} />
         {capabilities.length > 0 && <SkillsTicker groups={capabilities} />}
         {projects.length > 0 && <SelectedWork projects={projects} />}
-        <About profile={profile} capabilities={capabilities} />
+        <About
+          profile={profile}
+          capabilities={capabilities}
+          experience={experience}
+          education={education}
+          publications={publications}
+        />
         {experience.length > 0 && <ExperienceSection items={experience} />}
         {education.length > 0 && <EducationSection items={education} />}
         {publications.length > 0 && <PublicationsSection items={publications} />}

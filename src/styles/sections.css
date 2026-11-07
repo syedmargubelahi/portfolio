@@ -204,14 +204,14 @@
   opacity: 0.55;
   animation: drift 26s var(--ease-in-out) -8s infinite alternate-reverse;
 }
-.glow--royal {
+.glow--ember {
   width: 18vw;
   height: 18vw;
   max-width: 260px;
   max-height: 260px;
   right: 30vw;
   bottom: 10vw;
-  background: #c9d2fb;
+  background: #ffc9a6;
   opacity: 0.5;
   animation: drift 30s var(--ease-in-out) -4s infinite alternate;
 }
@@ -272,7 +272,7 @@
   animation-delay: calc(120ms + var(--i) * 70ms);
 }
 .word--highlight {
-  color: var(--royal);
+  color: var(--ember);
 }
 .word-underline {
   position: absolute;
@@ -910,7 +910,7 @@
   width: 72%;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1.5px dashed rgba(47, 75, 216, 0.35);
+  border: 1.5px dashed rgba(194, 71, 10, 0.35);
   animation: spin 40s linear infinite;
 }
 @keyframes spin {
@@ -976,7 +976,7 @@
   font-family: var(--font-display);
   font-size: var(--step-2);
   font-weight: 650;
-  color: var(--royal);
+  color: var(--ember);
   padding-left: 6px;
 }
 .capability-head h4 {
@@ -1005,7 +1005,7 @@
   margin-inline: clamp(8px, 1.5vw, 20px);
 }
 .experience .eyebrow {
-  color: #b7c3ff;
+  color: #ffb27a;
 }
 .experience h2,
 .experience h3 {
@@ -1105,7 +1105,7 @@
   font-weight: 700;
   letter-spacing: -0.05em;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--royal);
+  -webkit-text-stroke: 1.5px var(--ember);
 }
 .edu-body h3 {
   font-size: var(--step-1);
@@ -1159,7 +1159,7 @@
 }
 .credential h4 a:hover,
 .publication h3 a:hover {
-  color: var(--royal);
+  color: var(--ember);
 }
 .credential-meta,
 .publication-meta {
@@ -1193,12 +1193,12 @@
   padding: clamp(36px, 6vw, 80px);
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 90% 10%, rgba(220, 213, 247, 0.35), transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(242, 98, 26, 0.28), transparent 50%),
     var(--ink);
   color: var(--paper);
 }
 .contact-card .eyebrow {
-  color: #b7c3ff;
+  color: #ffb27a;
 }
 .contact-card h2 {
   margin: 12px 0 28px;

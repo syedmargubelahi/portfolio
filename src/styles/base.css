@@ -120,7 +120,7 @@ main:focus {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-ink, var(--royal));
+  color: var(--accent-ink, var(--ember));
 }
 
 /* Buttons and pills */
@@ -164,7 +164,7 @@ main:focus {
   --btn-fg: var(--paper);
 }
 .button--primary:hover {
-  --btn-bg: var(--royal-deep);
+  --btn-bg: var(--ember-deep);
 }
 .button--primary:hover .icon {
   transform: translate(2px, -2px);
@@ -206,8 +206,8 @@ main:focus {
   color: var(--ink-soft);
 }
 .pill--soft {
-  background: var(--royal-wash);
-  color: var(--royal-deep);
+  background: var(--ember-wash);
+  color: var(--ember-deep);
 }
 .pill--spoke,
 .pill--organized,
@@ -254,7 +254,7 @@ main:focus {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent, var(--royal));
+  background: var(--accent, var(--ember));
 }
 
 .monogram {

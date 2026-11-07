@@ -7,16 +7,20 @@
   --ink: #14213d;
   --ink-soft: #3f4a66;
   --ink-mute: #5f6880;
-  --royal: #2f4bd8;
-  --royal-deep: #2238ad;
-  --royal-wash: #e7ebfd;
+  --ember: #c2470a;
+  --ember-bright: #ff8a3d;
+  --ember-glow: #f2621a;
+  --ember-deep: #a83c0a;
+  --ember-wash: #fde9dc;
+  --night: #0e1220;
+  --night-soft: #171c2e;
   --lavender: #dcd5f7;
   --lavender-ink: #5442b0;
   --mint: #cfeee0;
   --mint-ink: #1d6b4c;
   --line: rgba(20, 33, 61, 0.11);
   --line-strong: rgba(20, 33, 61, 0.2);
-  --focus: #2f4bd8;
+  --focus: #c2470a;
 
   /* Type */
   --font-display: 'Sora Variable', 'Sora', 'Segoe UI', system-ui, sans-serif;
@@ -50,10 +54,10 @@
   --dur-slow: 900ms;
 }
 
-.accent--royal {
-  --accent: var(--royal);
-  --accent-wash: var(--royal-wash);
-  --accent-ink: var(--royal-deep);
+.accent--ember {
+  --accent: var(--ember);
+  --accent-wash: var(--ember-wash);
+  --accent-ink: var(--ember-deep);
 }
 .accent--lavender {
   --accent: #7a68d6;

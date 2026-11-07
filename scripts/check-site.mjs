@@ -14,6 +14,9 @@ import { credentials } from '../src/content/credentials.ts';
 import { publications } from '../src/content/publications.ts';
 import { experience } from '../src/content/experience.ts';
 
+const FIRST_CLIP = '#work video >> nth=0';
+const FIRST_TOGGLE = '#work .video-toggle >> nth=0';
+
 // Expectations come from the content itself, so the checks stay valid as projects change.
 const drafts = projects.filter((p) => p.visibility === 'draft');
 const published = projects.filter((p) => p.visibility === 'published');
@@ -103,22 +106,27 @@ for (const size of sizes) {
   const h1 = await page.$$eval('h1', (h) => h.length);
   check('exactly one h1', h1 === 1);
 
-  // Hero clip plays when visible and pauses offscreen.
+  // The hero shows the portrait, loaded eagerly and sharp.
+  const portrait = await page.$eval('.hero-portrait img', (i) => ({ ok: i.complete && i.naturalWidth >= 400, w: i.naturalWidth }));
+  check('hero portrait loads', portrait.ok, `${portrait.w}px`);
+
+  // The first project clip plays when visible and pauses offscreen.
+  await page.locator(FIRST_CLIP).scrollIntoViewIfNeeded();
   await page.waitForTimeout(1500);
-  const heroPlaying = await page.$eval('.hero video', (v) => !v.paused);
-  check('hero preview plays while visible', heroPlaying);
+  const heroPlaying = await page.$eval(FIRST_CLIP, (v) => !v.paused);
+  check('project preview plays while visible', heroPlaying);
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(800);
-  const heroPausedOff = await page.$eval('.hero video', (v) => v.paused);
-  check('hero preview pauses offscreen', heroPausedOff);
-  await page.evaluate(() => window.scrollTo(0, 0));
+  const heroPausedOff = await page.$eval(FIRST_CLIP, (v) => v.paused);
+  check('project preview pauses offscreen', heroPausedOff);
+  await page.locator(FIRST_CLIP).scrollIntoViewIfNeeded();
   await page.waitForTimeout(800);
 
   // Pause button is respected.
-  await page.click('.hero .video-toggle');
+  await page.locator(FIRST_TOGGLE).first().click();
   await page.waitForTimeout(300);
-  const pausedByUser = await page.$eval('.hero video', (v) => v.paused);
-  const label = await page.getAttribute('.hero .video-toggle', 'aria-label');
+  const pausedByUser = await page.$eval(FIRST_CLIP, (v) => v.paused);
+  const label = await page.locator(FIRST_TOGGLE).first().getAttribute('aria-label');
   check('pause button pauses the clip', pausedByUser && /^Play/.test(label ?? ''), label ?? '');
 
   // Media tabs switch clips and support arrow keys.
@@ -261,9 +269,10 @@ for (const size of sizes) {
   check('reduced motion: no clip autoplays', !anyPlaying);
   const hidden = await page.$$eval('.reveal', (els) => els.filter((e) => getComputedStyle(e).opacity !== '1').length);
   check('reduced motion: revealed content is visible immediately', hidden === 0, `${hidden} hidden`);
-  await page.click('.hero .video-toggle');
+  await page.locator(FIRST_TOGGLE).first().scrollIntoViewIfNeeded();
+  await page.locator(FIRST_TOGGLE).first().click();
   await page.waitForTimeout(600);
-  check('reduced motion: Play button still works', await page.$eval('.hero video', (v) => !v.paused));
+  check('reduced motion: Play button still works', await page.$eval(FIRST_CLIP, (v) => !v.paused));
   await ctx.close();
 }
 

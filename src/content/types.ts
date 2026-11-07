@@ -24,6 +24,8 @@ export interface ImageMedia {
   width: number;
   height: number;
   caption?: string;
+  /** Optional WebP copies at several widths for responsive loading. */
+  webp?: { src: string; width: number }[];
 }
 
 export interface VideoMedia {
@@ -85,7 +87,7 @@ export interface Project extends Ordered {
   /** Optional single sentence. */
   summary?: string;
   /** Visual accent for this project's frames. */
-  accent: 'royal' | 'lavender' | 'mint';
+  accent: 'ember' | 'lavender' | 'mint';
   media: Media[];
   /** Only add when there is enough verified content. Enables "View Case Study". */
   caseStudy?: CaseStudy;

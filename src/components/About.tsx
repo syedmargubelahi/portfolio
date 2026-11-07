@@ -1,36 +1,74 @@
 import type { CSSProperties } from 'react';
-import type { CapabilityGroup, Profile } from '../content';
-import { asset } from '../format';
-import { DraftBadge, Monogram, Reveal, SectionHeading } from './ui';
+import type { CapabilityGroup, Education, Experience, Profile, Publication } from '../content';
+import { DraftBadge, Reveal, SectionHeading } from './ui';
 
-export function About({ profile, capabilities }: { profile: Profile; capabilities: CapabilityGroup[] }) {
+/** A quick-facts card. Every line is drawn from published content. */
+function AtAGlance({
+  profile,
+  capabilities,
+  experience,
+  education,
+  publications,
+}: {
+  profile: Profile;
+  capabilities: CapabilityGroup[];
+  experience: Experience[];
+  education: Education[];
+  publications: Publication[];
+}) {
+  const current = experience.filter((e) => e.end === 'present');
+  const languages = capabilities.find((c) => c.id === 'languages')?.items ?? [];
+  const facts: { label: string; values: string[] }[] = [
+    { label: 'Based in', values: [profile.location] },
+    { label: 'Currently', values: current.map((e) => `${e.role}, ${e.organization}`) },
+    { label: 'Education', values: education.slice(0, 2).map((e) => `${e.qualification}, ${e.institution}`) },
+    { label: 'Research', values: publications.length ? [`${publications.length} published papers in applied economics`] : [] },
+    { label: 'Languages', values: languages },
+  ].filter((f) => f.values.length > 0);
+
+  return (
+    <Reveal className="glance">
+      <p className="glance-title">At a glance</p>
+      <dl className="glance-list">
+        {facts.map((f) => (
+          <div key={f.label} className="glance-row">
+            <dt>{f.label}</dt>
+            {f.values.map((v) => (
+              <dd key={v}>{v}</dd>
+            ))}
+          </div>
+        ))}
+      </dl>
+    </Reveal>
+  );
+}
+
+export function About({
+  profile,
+  capabilities,
+  experience = [],
+  education = [],
+  publications = [],
+}: {
+  profile: Profile;
+  capabilities: CapabilityGroup[];
+  experience?: Experience[];
+  education?: Education[];
+  publications?: Publication[];
+}) {
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
       <div className="container">
         <SectionHeading id="about-title" eyebrow="About" title="Precise with words. Careful with numbers. Quick to ship." />
 
         <div className="about-grid">
-          <Reveal className="about-portrait">
-            {profile.portrait ? (
-              <img
-                className="portrait-img"
-                src={asset(profile.portrait.src)}
-                alt={profile.portrait.alt}
-                width={profile.portrait.width}
-                height={profile.portrait.height}
-                loading="lazy"
-              />
-            ) : (
-              <div className="portrait-placeholder">
-                <span className="portrait-ring" aria-hidden="true" />
-                <Monogram text={profile.monogram} size="lg" />
-              </div>
-            )}
-            <p className="portrait-caption">
-              <strong>{profile.name}</strong>
-              <span>{profile.location}</span>
-            </p>
-          </Reveal>
+          <AtAGlance
+            profile={profile}
+            capabilities={capabilities}
+            experience={experience}
+            education={education}
+            publications={publications}
+          />
 
           <Reveal className="about-copy" delay={100}>
             {profile.about.map((para, i) => (

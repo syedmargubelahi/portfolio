@@ -21,7 +21,7 @@ export const projects: Project[] = [
     },
     summary:
       'Keeps a business’s licences, certificates, insurance, vehicle papers and contracts in one place, gives each one an owner, and emails the team before anything expires.',
-    accent: 'royal',
+    accent: 'ember',
     media: [
       {
         kind: 'video',

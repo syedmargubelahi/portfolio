@@ -6,6 +6,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
 import './styles/motion.css';
+import './styles/hero.css';
 import { App } from './App';
 
 // Reveal animations only hide content once we know JavaScript is running.
