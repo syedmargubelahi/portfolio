@@ -6,3 +6,4 @@ test-results
 .env.*
 .claude
 PRIVATE_NOTES.md
+*.tsbuildinfo
