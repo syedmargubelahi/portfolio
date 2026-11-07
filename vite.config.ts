@@ -15,6 +15,10 @@ import { capabilities } from './src/content/capabilities.ts';
 // The plain-text CV sits inside <noscript>. Applicant tracking systems (ATS),
 // link previews and some search tools read a page without running JavaScript;
 // they get the whole CV as simple, well-ordered HTML instead of an empty page.
+// Link-preview card in public/. Give each new version a new file name (e.g. the date), so Facebook,
+// LinkedIn and WhatsApp treat it as a new image instead of showing their saved copy of the old one.
+const OG_IMAGE = 'og-card-2026-11-07.png';
+
 function contentMeta(): Plugin {
   const published = <T extends { visibility: string; order: number }>(items: T[]) =>
     items.filter((i) => i.visibility === 'published').sort((a, b) => a.order - b.order);
@@ -96,7 +100,11 @@ function contentMeta(): Plugin {
       ? [
           `<link rel="canonical" href="${url}/" />`,
           `<meta property="og:url" content="${url}/" />`,
-          `<meta property="og:image" content="${url}/og-image.png" />`,
+          `<meta property="og:image" content="${url}/${OG_IMAGE}" />`,
+          `<meta property="og:image:width" content="1200" />`,
+          `<meta property="og:image:height" content="630" />`,
+          `<meta property="og:image:alt" content="${escape(`${profile.name} — ${profile.tagline}`)}" />`,
+          `<meta name="twitter:image" content="${url}/${OG_IMAGE}" />`,
         ]
       : []),
     `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>`,

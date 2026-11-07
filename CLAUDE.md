@@ -69,7 +69,7 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
   ("Office Administrator" for "Senior Office Administrator"). The site name is "Portfolio", not "Portfolio & CV".
 - Use the standard skill and job-title terms recruiters search for (e.g. "Payroll processing", "Copy editing").
 - `profile.tagline` is the browser-tab, search and share-preview line (with the name). Keep it short, memorable
-  and true; it deliberately avoids listing job titles. The preview card `public/og-image.png` shows it too.
+  and true; it deliberately avoids listing job titles. The preview card the preview card in `public/og-card-*.png` shows it too.
 - `profile.titles`, `profile.strengths` and section headings are the first things a reader sees: keep them
   short, specific and true. Each strength must rest on a record elsewhere on the site.
 - `vite.config.ts` builds a plain-text CV into `<noscript>` for ATS and no-JS readers from published content.
@@ -83,9 +83,10 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
   accents. Each project picks `accent: 'ember' | 'lavender' | 'mint'`.
 - Hero (`styles/hero.css`, loaded last): dark stage, name as the `h1`, portrait in a tall rounded frame with
   facts built from content. On phones the portrait comes first and the facts sit under it.
-  Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-image.png` is the
-  link-preview card; regenerate it with `python scripts/make-og-image.py public/media/portrait/portrait-1200.jpg public/og-image.png`
-  when the portrait or tagline changes (the text lines are inside the script).
+  Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-card-<date>.png` is the
+  link-preview card; regenerate it with `python scripts/make-og-image.py public/media/portrait/portrait-1200.jpg public/og-card-<date>.png`
+  when the portrait or tagline changes (the text lines are inside the script), save it under a new date,
+  delete the old file and update `OG_IMAGE` in `vite.config.ts`.
 - Type: Sora (display, `--font-display`) and Inter (body), self-hosted via Fontsource.
 - Shapes: rounded media frames (`--radius-lg`), pill buttons and links, soft shadows (`--shadow-*`).
 - Layouts vary per section (collage, typographic panel, numbered list, dark timeline, pill rows). Avoid
