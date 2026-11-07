@@ -41,7 +41,7 @@ export function ExperienceSection({ items }: { items: Experience[] }) {
   return (
     <section className="section experience" id="experience" aria-labelledby="experience-title">
       <div className="container">
-        <SectionHeading id="experience-title" eyebrow="Experience" title="Proven across broadcasting, education and business." />
+        <SectionHeading id="experience-title" eyebrow="Experience" title="Proven across broadcasting, education, events and business." />
         <ol className="timeline">
           {items.map((job, i) => (
             <Reveal as="li" key={job.id} className={`timeline-item ${job.end === 'present' ? 'is-current' : ''}`} delay={Math.min(i, 3) * 90}>

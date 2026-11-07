@@ -2,48 +2,81 @@ import type { CapabilityGroup } from './types.ts';
 
 // No percentages or proficiency scores: list what you do and the tools you use.
 // Skill names use the standard terms recruiters and ATS software search for.
-// Source: CVs on file plus what Margub listed in chat.
+// Every tag must map to a record elsewhere (experience, credentials, publications,
+// projects) or to something Margub listed in chat. The comment above each group
+// names its sources.
 export const capabilities: CapabilityGroup[] = [
   {
+    // Vertical Horizon Limited (2018–present), Bangladesh Betar budget and payments,
+    // Maple Leaf International School (teaching).
     id: 'administration',
     order: 1,
     visibility: 'published',
     title: 'Administration & accounts',
     description: 'Running the office and accounts side of an education institute: budgets, payroll, records and exams.',
-    // Each item maps to a duty in experience.ts (Vertical Horizon Limited and Bangladesh Betar).
     items: [
       'Office administration',
+      'Office management',
       'Budget preparation & monitoring',
       'Payroll processing',
       'Payment processing (vendors & contractors)',
       'Financial record keeping',
-      'Procurement & logistics',
-      'Recruitment & staff training',
+      'Documentation & filing',
+      'Records & database management',
+      'Report writing',
       'Student records & attendance reporting',
       'Performance reporting',
+      'Recruitment & staff training',
+      'Procurement',
       'Exam coordination & invigilation',
       'Exam seating plans',
       'Question paper & mock test preparation',
+      'Assessment & script marking',
+      'Lesson planning',
       'Parent–teacher meeting coordination',
-      'Event management',
-      'Event logistics & security',
-      'Records & database management',
+      'Stakeholder communication',
     ],
   },
   {
-    id: 'editorial',
+    // Breakfast Club Dhaka (2025–present), Flashback at Vertical Horizon Limited,
+    // ICSD 2018 organiser (50 volunteers), Daraz back office, Banglalink Digital.
+    id: 'operations',
     order: 2,
+    visibility: 'published',
+    title: 'Events & operations',
+    description: 'Making events and day-to-day operations run on time, safely and to plan.',
+    items: [
+      'Event management',
+      'Event logistics',
+      'Event security administration',
+      'Academic event planning',
+      'Conference organising',
+      'Volunteer team management',
+      'Logistics & procurement',
+      'Vendor coordination',
+      'Back-office operations',
+      'Customer service',
+      'Sales support',
+    ],
+  },
+  {
+    // Bangladesh Betar (2019–present); Vertical Horizon Limited social media;
+    // Digital Marketing training (2021).
+    id: 'editorial',
+    order: 3,
     visibility: 'published',
     title: 'Sub-editing & publishing',
     description: 'Taking copy from submission to a printed, distributed publication, in Bangla and English.',
-    // Each item maps to a Bangladesh Betar duty in experience.ts.
     items: [
       'Sub-editing',
       'Copy editing',
       'Proofreading',
+      'News editing',
+      'Feature & literary editing',
       'Bangla & English editing',
       'Content vetting & approval',
       'Editorial planning',
+      'Publication scheduling',
       'Print production & press liaison',
       'Cover & design briefs',
       'Photo selection',
@@ -51,22 +84,36 @@ export const capabilities: CapabilityGroup[] = [
       'Publication distribution',
       'Archiving & library management',
       'Content writing',
+      'Blog writing',
       'Social media management',
+      'Digital marketing',
       'SEO (on-page & off-page)',
       'Public relations',
     ],
   },
   {
+    // MA and BSc in Economics; three published papers; STATA trainings.
     id: 'research',
-    order: 3,
+    order: 4,
     visibility: 'published',
     title: 'Economics & research',
     description: 'Looking at a problem through costs, people and data.',
-    items: ['Econometrics (2SLS, ARDL)', 'Quantitative research', 'Data analysis', 'STATA', 'SPSS', 'Python'],
+    items: [
+      'Econometrics (2SLS, ARDL)',
+      'Regression analysis',
+      'Time-series analysis',
+      'Quantitative research',
+      'Data analysis',
+      'Academic writing & publishing',
+      'STATA',
+      'SPSS',
+      'Python',
+    ],
   },
   {
+    // Tools from the CVs and chat; AI-assisted development from the three live projects.
     id: 'tools',
-    order: 4,
+    order: 5,
     visibility: 'published',
     title: 'Software & AI tools',
     description: 'What I use day to day, including AI-assisted workflows.',
@@ -76,6 +123,7 @@ export const capabilities: CapabilityGroup[] = [
       'Microsoft PowerPoint',
       'Microsoft Outlook',
       'HTML',
+      'AI-assisted web development',
       'Canva (templates & graphics)',
       'Adobe Photoshop',
       'Adobe Premiere Pro',
@@ -89,7 +137,7 @@ export const capabilities: CapabilityGroup[] = [
   },
   {
     id: 'languages',
-    order: 5,
+    order: 6,
     visibility: 'published',
     title: 'Languages',
     description: 'Languages I work and study in.',
