@@ -36,7 +36,7 @@ function contentMeta(): Plugin {
   const skills = published(capabilities);
   const live = published(projects).filter((p) => p.link?.status === 'live');
 
-  const title = `${profile.name} — ${profile.titles.slice(0, 3).join(', ')} | Portfolio & CV`;
+  const title = `${profile.name} — ${profile.tagline}`;
   const description = profile.shortBio;
   const url = profile.siteUrl?.replace(/\/$/, '');
 

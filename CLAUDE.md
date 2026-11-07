@@ -64,7 +64,12 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
   current roles, past tense for earlier ones. One idea per bullet, no filler.
 - Use only facts from Margub's sources. Real figures are welcome (14 offices, 6 units, 50 volunteers,
   400 students); invented ones never. No money amounts.
+- Designations: in sentences always write the full title with its organisation ("Senior Office Administrator at
+  Vertical Horizon Limited"). Short lists (hero chips) may use the bare full title. Never shorten a title
+  ("Office Administrator" for "Senior Office Administrator"). The site name is "Portfolio", not "Portfolio & CV".
 - Use the standard skill and job-title terms recruiters search for (e.g. "Payroll processing", "Copy editing").
+- `profile.tagline` is the browser-tab, search and share-preview line (with the name). Keep it short, memorable
+  and true; it deliberately avoids listing job titles. The preview card `public/og-image.png` shows it too.
 - `profile.titles`, `profile.strengths` and section headings are the first things a reader sees: keep them
   short, specific and true. Each strength must rest on a record elsewhere on the site.
 - `vite.config.ts` builds a plain-text CV into `<noscript>` for ATS and no-JS readers from published content.

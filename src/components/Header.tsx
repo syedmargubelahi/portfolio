@@ -43,7 +43,7 @@ export function Header({ profile, items }: { profile: Profile; items: NavItem[] 
           <Monogram text={profile.monogram} size="sm" />
           <span className="identity-text">
             <span className="identity-name">{profile.name}</span>
-            <span className="identity-role">Portfolio &amp; CV</span>
+            <span className="identity-role">Portfolio</span>
           </span>
         </a>
 

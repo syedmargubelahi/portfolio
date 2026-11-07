@@ -8,13 +8,16 @@ export const profile: Profile = {
   // Set this once the site has a public address. It turns on canonical and
   // Open Graph URL tags.
   siteUrl: 'https://syedmargubelahi.github.io/portfolio',
-  titles: ['Sub-Editor', 'Office Administrator', 'Economics Researcher', 'AI-assisted Product Builder'],
+  titles: ['Sub-Editor', 'Senior Office Administrator', 'Economics Researcher', 'AI-assisted Product Builder'],
+  // Shown in the browser tab, search results and link previews instead of a list of job titles.
+  // Each part rests on real work: editing (words), economics research (numbers), live products (ship).
+  tagline: 'Precise Words. Sharp Numbers. Ideas That Ship.',
   heroHeadline: 'Turning everyday problems into useful digital experiences.',
   heroWords: { highlight: 'useful' },
   heroIntro:
-    'I’m Syed Margub Elahi, Sub-Editor at Bangladesh Betar and Senior Office Administrator since 2018, with an MA in Economics and three published research papers. I bring editorial precision, organised administration and data-driven thinking, and I use AI-assisted tools to turn ideas into live products.',
+    'I’m Syed Margub Elahi, Sub-Editor at Bangladesh Betar and Senior Office Administrator at Vertical Horizon Limited, with an MA in Economics and three published research papers. I bring editorial precision, organised administration and data-driven thinking, and I use AI-assisted tools to turn ideas into live products.',
   shortBio:
-    'Syed Margub Elahi, Dhaka: Sub-Editor at Bangladesh Betar and Senior Office Administrator. MA in Economics, three published econometric research papers and three live AI-assisted web products.',
+    'Syed Margub Elahi, Dhaka: Sub-Editor at Bangladesh Betar and Senior Office Administrator at Vertical Horizon Limited. MA in Economics, three published econometric research papers and three live AI-assisted web products.',
   about: [
     'Teams rely on me to get the details right: on the page, in the office and in the numbers.',
     'At Bangladesh Betar, the national public broadcaster, I sub-edit and produce the Betar Bangla journal, from vetted copy and programme planning with 14 regional offices to print and nationwide distribution. At Vertical Horizon Limited I have run office administration since 2018: budgets, records, recruitment, payroll and examinations.',
@@ -28,7 +31,7 @@ export const profile: Profile = {
     },
     {
       title: 'Organised administration',
-      text: 'Budgets, records, recruitment, payroll, procurement and exam logistics at Vertical Horizon since 2018.',
+      text: 'Budgets, records, recruitment, payroll, procurement and exam logistics at Vertical Horizon Limited since 2018.',
     },
     {
       title: 'Evidence-based thinking',
