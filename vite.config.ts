@@ -17,7 +17,7 @@ import { capabilities } from './src/content/capabilities.ts';
 // they get the whole CV as simple, well-ordered HTML instead of an empty page.
 // Link-preview card in public/. Give each new version a new file name (e.g. the date), so Facebook,
 // LinkedIn and WhatsApp treat it as a new image instead of showing their saved copy of the old one.
-const OG_IMAGE = 'og-card-2026-11-07.png';
+const OG_IMAGE = 'og-card-2026-11-07b.jpg';
 
 function contentMeta(): Plugin {
   const published = <T extends { visibility: string; order: number }>(items: T[]) =>
@@ -92,7 +92,9 @@ function contentMeta(): Plugin {
     `<title>${escape(title)}</title>`,
     `<meta name="description" content="${escape(description)}" />`,
     `<meta name="author" content="${escape(profile.name)}" />`,
-    `<meta property="og:type" content="profile" />`,
+    `<meta property="og:type" content="website" />`,
+    `<meta property="og:site_name" content="${escape(profile.name)} — Portfolio" />`,
+    `<meta property="og:locale" content="en_US" />`,
     `<meta property="og:title" content="${escape(title)}" />`,
     `<meta property="og:description" content="${escape(description)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
@@ -101,6 +103,8 @@ function contentMeta(): Plugin {
           `<link rel="canonical" href="${url}/" />`,
           `<meta property="og:url" content="${url}/" />`,
           `<meta property="og:image" content="${url}/${OG_IMAGE}" />`,
+          `<meta property="og:image:secure_url" content="${url}/${OG_IMAGE}" />`,
+          `<meta property="og:image:type" content="image/jpeg" />`,
           `<meta property="og:image:width" content="1200" />`,
           `<meta property="og:image:height" content="630" />`,
           `<meta property="og:image:alt" content="${escape(`${profile.name} — ${profile.tagline}`)}" />`,

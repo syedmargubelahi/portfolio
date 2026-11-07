@@ -83,8 +83,8 @@ Margub asked for recruiter-ready wording that Claude writes and maintains.
   accents. Each project picks `accent: 'ember' | 'lavender' | 'mint'`.
 - Hero (`styles/hero.css`, loaded last): dark stage, name as the `h1`, portrait in a tall rounded frame with
   facts built from content. On phones the portrait comes first and the facts sit under it.
-  Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-card-<date>.png` is the
-  link-preview card; regenerate it with `python scripts/make-og-image.py public/media/portrait/portrait-1200.jpg public/og-card-<date>.png`
+  Portrait files: `public/media/portrait/` (1200px JPG plus 480–1600px WebP). `public/og-card-<date>.jpg` is the
+  link-preview card; regenerate it with `python scripts/make-og-image.py public/media/portrait/portrait-1200.jpg public/og-card-<date>.jpg`
   when the portrait or tagline changes (the text lines are inside the script), save it under a new date,
   delete the old file and update `OG_IMAGE` in `vite.config.ts`.
 - Type: Sora (display, `--font-display`) and Inter (body), self-hosted via Fontsource.
