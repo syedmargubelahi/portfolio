@@ -208,7 +208,7 @@ export const credentials: Credential[] = [
       ['seminar', 'APON Drug Rehabilitation'],
       ['seminar', 'Public Health'],
       ['seminar', 'Global and Climate Change'],
-      ['seminar', 'Meet the Employees'],
+      ['seminar', 'Meet the Employers'],
       ['workshop', 'Stress Management'],
       ['workshop', 'Anger Management'],
       ['workshop', 'Acceptance and Goal Setting Management'],
