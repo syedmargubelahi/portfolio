@@ -12,8 +12,8 @@ export const profile: Profile = {
   // Shown in the browser tab, search results and link previews instead of a list of job titles.
   // Chosen by Margub on 2026-11-07. Each part rests on real work: sub-editing, economics research, live products.
   tagline: 'Editor’s Eye. Economist’s Mind. Builder’s Drive.',
-  heroHeadline: 'Turning everyday problems into useful digital experiences.',
-  heroWords: { highlight: 'useful' },
+  // Chosen by Margub on 2026-11-07. The last sentence is shown in the accent colour.
+  heroHeadline: 'One Hire. Many Roles. Zero Loose Ends.',
   heroIntro:
     'I’m Syed Margub Elahi, Sub-Editor at Bangladesh Betar and Senior Office Administrator at Vertical Horizon Limited, with an MA in Economics and three published research papers. I bring editorial precision, organised administration and data-driven thinking, and I use AI-assisted tools to turn ideas into live products.',
   shortBio:

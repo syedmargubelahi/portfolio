@@ -184,7 +184,6 @@ export interface Profile {
   /** Short, memorable line used in the browser tab, search results and share previews. */
   tagline: string;
   heroHeadline: string;
-  heroWords: { highlight: string };
   heroIntro: string;
   shortBio: string;
   about: string[];

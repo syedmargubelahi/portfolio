@@ -98,6 +98,10 @@ export function Hero({
   badges?: HeroBadge[];
 }) {
   const nameWords = profile.name.split(' ');
+  // The headline's last sentence is picked out in the accent colour.
+  const sentences = profile.heroHeadline.match(/[^.!?]+[.!?]*/g)?.map((s) => s.trim()) ?? [profile.heroHeadline];
+  const headLast = sentences[sentences.length - 1];
+  const headLead = sentences.slice(0, -1).join(' ');
 
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
@@ -133,7 +137,10 @@ export function Hero({
             ))}
           </p>
 
-          <p className="hero-headline">{profile.heroHeadline}</p>
+          <p className="hero-headline">
+            {headLead && <>{headLead} </>}
+            <span className="hero-headline-accent">{headLast}</span>
+          </p>
           <p className="hero-intro">{profile.heroIntro}</p>
 
           <div className="hero-actions">

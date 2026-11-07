@@ -95,6 +95,9 @@
   color: var(--paper);
   animation: fade-up var(--dur-slow) var(--ease-out) 560ms both;
 }
+.hero-headline-accent {
+  color: var(--ember-bright);
+}
 .hero .hero-intro {
   margin-top: 14px;
   font-size: var(--step-0);
